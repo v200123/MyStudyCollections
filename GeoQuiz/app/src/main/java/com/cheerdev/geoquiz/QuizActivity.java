@@ -4,13 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends Activity {
     private Button mTrueButton;
     private Button mFalseButton;
-    private Button mNextButton;
+    private ImageButton mNextButton;
+    private ImageButton mBackButton;
     private TextView mQuestionTextView;
 
     private TrueFalse[ ] mQuestionBank = new TrueFalse[ ]{
@@ -64,7 +66,7 @@ public class QuizActivity extends Activity {
             }
         });
 
-        mNextButton = (Button)findViewById(R.id.next_button);
+        mNextButton = (ImageButton)findViewById(R.id.next_button2);
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,5 +77,33 @@ public class QuizActivity extends Activity {
             }
         });
         updateQuestion();
+
+        //挑战练习1
+
+        mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCurrentIndex=(mCurrentIndex +1) % mQuestionBank.length;
+
+            }
+        });
+        updateQuestion();
+
+        //挑战练习2
+
+        mBackButton = (ImageButton) findViewById(R.id.back_button2);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mCurrentIndex % mQuestionBank.length == 0){
+                    mCurrentIndex = mQuestionBank.length - 1;
+                }else{
+                    mCurrentIndex=(mCurrentIndex -1) % mQuestionBank.length;
+                }
+                updateQuestion();
+            }
+        });
+
     }
 }

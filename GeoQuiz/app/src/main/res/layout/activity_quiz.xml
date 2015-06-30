@@ -20,23 +20,64 @@
             android:id="@+id/true_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1.0"
             android:textAllCaps="false"
             android:text="@string/true_button"/>
         <Button
             android:id="@+id/false_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1.0"
             android:textAllCaps="false"
             android:text="@string/false_button"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_button"
-        android:textAllCaps="false"
-        android:layout_gravity="center_horizontal" />
+        <!--练习3-->
+        <ImageButton
+            android:id="@+id/back_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/back"
+            android:contentDescription="@string/back_button"/>
+
+        <ImageButton
+            android:id="@+id/next_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/next"
+            android:contentDescription="@string/next_button"/>
+
+        <!--
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textAllCaps="false"
+            android:text="@string/back_button"
+            android:drawableLeft="@mipmap/back"
+            android:drawablePadding="4dp"/>
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="@string/next_button"
+            android:drawableRight="@mipmap/next"
+            android:drawablePadding="4dp"
+            android:textAllCaps="false"/>
+
+         -->
+
+    </LinearLayout>
+
 
 </LinearLayout>
